@@ -11,7 +11,6 @@ export default {
     },
   },
   render(h, ctx) {
-    const Prefix = h("i", { class: ["fas", "fa-search"] });
     return h(
       "Button",
       {
@@ -20,8 +19,12 @@ export default {
           ...ctx.props,
           /** use props or extend here */
         },
+        scopedSlots: {
+          ...ctx.scopedSlots,
+          default: () => h("i", { class: ["fas", "fa-search"] }),
+          /** use slots or extend here */
+        },
       },
-      [Prefix],
       ...(ctx.children || [])
     );
   },
