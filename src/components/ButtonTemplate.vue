@@ -3,7 +3,7 @@
     :label="label"
     :type="type"
     v-on="$listeners"
-    v-bind="[$attrs, $options.propsData]"
+    v-bind="[$attrs, $props]"
   >
     <template #after><i class="fas fa-redo"></i></template>
     <template v-for="(_, slot) of $scopedSlots" v-slot:[slot]="scope">

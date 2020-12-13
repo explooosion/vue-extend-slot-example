@@ -19,6 +19,8 @@ export default {
     type: {
       type: String,
       default: "button",
+      validator: (value) =>
+        ["button", "submit", "reset"].includes(value.toLowerCase()),
     },
     label: {
       type: String,
